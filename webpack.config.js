@@ -13,6 +13,9 @@ module.exports = {
 			test: /\.jsx?$/,
 			exclude: /node_modules/,
 			loaders: ['react-hot', 'babel']
+		}, {
+			test: /\.css$/,
+			loaders: ['style', 'css', 'postcss']
 		}]
 	},
 	resolve: {extensions: ['', '.js', '.jsx']},
@@ -25,6 +28,6 @@ module.exports = {
 		contentBase: './dist',
 		hot: true
 	},
-	devtool: 'eval',
-	plugins: [new webpack.HotModuleReplacementPlugin()]
+	devtool: 'eval'
+	// plugins: [new webpack.HotModuleReplacementPlugin()]
 };
