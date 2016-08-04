@@ -6,9 +6,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Voting from './components/Voting';
 
-const pair = ['Dev D', 'Zindagi Na Milegi Dobara'];
+const pair = ['Dev D', 'Manorama'];
 
 ReactDOM.render(
-	<Voting pair={pair}/>,
+	<Voting pair={pair} vote={(entry)=> {
+		return entry
+	}}/>,
 	document.getElementById('app')
 );
