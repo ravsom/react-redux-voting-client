@@ -71,6 +71,24 @@ describe('Voting', ()=> {
 		var winnerNode = ReactDOM.findDOMNode(component.refs.winner);
 		expect(winnerNode).to.be.ok;
 		expect(winnerNode.textContent).to.contain('Band Baaja Baraat');
+	});
 
-	})
+	it('renders as a pure component', ()=> {
+		const pair = ['KalHoNaHo', 'Darr'];
+
+		const container = document.createElement('div');
+		let component = ReactDOM.render(<Voting pair={pair}/>, container);
+
+		let firstButton = scryRenderedDOMComponentsWithTag(component, 'button')[0];
+
+		expect(firstButton.textContent).to.equal('KalHoNaHo');
+
+		pair[0] = "MainHoonNa";
+
+		component = ReactDOM.render(<Voting pair={pair}/>, container);
+
+		firstButton = scryRenderedDOMComponentsWithTag(component, 'button')[0];
+
+		expect(firstButton.textContent).to.equal('KalHoNaHo');
+	});
 });
