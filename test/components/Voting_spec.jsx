@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Voting from '../../src/components/Voting'
+import {Voting} from '../../src/components/Voting'
 import {describe} from "mocha/lib/mocha";
 import {
 	renderIntoDocument,
