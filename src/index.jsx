@@ -5,11 +5,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {VotingContainer} from './components/Voting';
-import Results from './components/Results';
+import {ResultsContainer} from './components/Results';
 import App from './components/App';
 import {createStore} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux'
+import io from 'socket.io-client';
 
 import {Route, Router, hashHistory} from 'react-router'
 
@@ -22,7 +23,7 @@ store.dispatch(
 	}
 );
 const routes = <Route component={App}>
-	<Route path='/results' component={Results}/>
+	<Route path='/results' component={ResultsContainer}/>
 	<Route path='/' component={VotingContainer}/>
 </Route>;
 

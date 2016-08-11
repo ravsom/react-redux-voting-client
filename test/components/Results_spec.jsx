@@ -9,8 +9,8 @@ import {
 
 import {List, Map} from 'immutable'
 
-import Results from '../../src/components/Results'
-import {expect} from 'chai'
+import {Results} from '../../src/components/Results';
+import {expect} from 'chai';
 import {describe} from "mocha/lib/mocha";
 
 describe('Results', ()=> {
